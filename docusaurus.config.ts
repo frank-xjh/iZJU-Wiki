@@ -89,6 +89,12 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
+          sidebarId: 'life',
+          position: 'left',
+          label: '生活',
+        },
+        {
+          type: 'docSidebar',
           sidebarId: 'zjui',
           position: 'left',
           label: 'ZJUI',

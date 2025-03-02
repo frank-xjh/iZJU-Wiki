@@ -26,7 +26,14 @@ const sidebars: SidebarsConfig = {
     'info/calendar',
     'info/map',
     'info/telephone',
+    'info/website',
   ],
+  life: [{
+    type: 'category',
+    label: '饮食',
+    items: ['life/diet_campus'],
+    collapsed: false,
+  }],
   zjui: [
     'zjui-course'
   ]
