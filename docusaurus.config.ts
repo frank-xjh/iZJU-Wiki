@@ -96,7 +96,8 @@ const config: Config = {
         {to: '/news', label: '新闻', position: 'left'},
         {
           href: 'https://github.com/frank-xjh/iZJU-Wiki',
-          label: 'GitHub',
+          'aria-label': 'GitHub Repository',
+					className: 'navbar-github-link',
           position: 'right',
         },
       ],
