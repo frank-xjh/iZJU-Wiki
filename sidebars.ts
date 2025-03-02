@@ -25,6 +25,7 @@ const sidebars: SidebarsConfig = {
     'information',
     'info/calendar',
     'info/map',
+    'info/telephone',
   ],
   zjui: [
     'zjui-course'
