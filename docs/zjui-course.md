@@ -1,0 +1,7 @@
+---
+title: ZJUI 课程指引
+sidebar_label: 课程总览
+hide_table_of_contents: true
+---
+
+# ZJUI 课程指引
