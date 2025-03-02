@@ -23,7 +23,7 @@ const sidebars: SidebarsConfig = {
   ],
   info: [
     'information',
-    'intro/how-to-contribute',
+    'info/calendar',
   ],
   zjui: [
     'zjui-course'
