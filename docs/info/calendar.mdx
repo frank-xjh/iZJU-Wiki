@@ -1,11 +1,31 @@
 ---
+sidebar_position: 1
 title: 院历
 sidebar_label: 院历
 hide_table_of_contents: true
 ---
 
-import { timelineOppositeContentClasses } from '@mui/lab/TimelineOppositeContent';
-import SchoolIcon from '@mui/icons-material/School';
+import React, { useState } from 'react';
+import { DatePicker } from '@mantine/dates';
+import { Button, Stack } from '@mantine/core';
+import { Calendar } from '@mantine/dates';
+import '@mantine/dates/styles.css';
+
+export default function SpecificDateSelector() {
+
+
+  return (
+    <Stack>
+      <Calendar />
+      <Button mt="sm">
+        Select Labor Day (-05-01)
+      </Button>
+      <Button color="green" mt="xs">
+         Select Christmas (-12-25)
+      </Button>
+    </Stack>
+  );
+}
 
 # 院历
 

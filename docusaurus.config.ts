@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'iZJU Wiki',
-  tagline: '',
+  tagline: 'Welcome to iZJU!',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -51,8 +51,6 @@ const config: Config = {
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/frank-xjh/iZJU-Wiki/tree/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -101,9 +99,8 @@ const config: Config = {
         },
         {to: '/news', label: '新闻', position: 'left'},
         {
-          href: 'https://github.com/frank-xjh/iZJU-Wiki',
-          'aria-label': 'GitHub Repository',
-					className: 'navbar-github-link',
+          href: 'https://github.com/facebook/docusaurus',
+          label: 'GitHub',
           position: 'right',
         },
       ],
@@ -112,11 +109,19 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Community',
           items: [
             {
-              label: '简介',
-              to: '/docs/introduction',
+              label: 'Stack Overflow',
+              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+            },
+            {
+              label: 'Discord',
+              href: 'https://discordapp.com/invite/docusaurus',
+            },
+            {
+              label: 'X',
+              href: 'https://x.com/docusaurus',
             },
           ],
         },
