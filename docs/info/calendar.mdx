@@ -9,4 +9,12 @@ import AcademicCalendar from '@site/src/components/AcademicCalendar';
 
 ## 2024-2025 Spring-Summer
 
-<AcademicCalendar />
+export const Schedule = [
+    {
+      label: '劳动节 (5.1 - 5.5)',
+      startDate: new Date(2025, 4, 1),
+      endDate: new Date(2025, 4, 5),
+    },
+  ];
+
+<AcademicCalendar predefinedRanges={Schedule} />

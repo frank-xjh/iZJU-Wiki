@@ -1,24 +1,29 @@
-import React, { useState, useEffect } from "react";
-import { DatePicker } from "@mantine/dates";
-import { Button, Group, Stack } from "@mantine/core";
-import ShadowContainer from "@site/src/components/ShadowContainer";
+import React, { useState } from 'react';
+import { DatePicker } from '@mantine/dates';
+import { Button, Group, Stack } from '@mantine/core';
+import ShadowContainer from '@site/src/components/ShadowContainer';
+import 'dayjs/locale/zh-cn';
 
-const predefinedRanges = [
-  {
-    label: '五一假期 (5.1 - 5.5)',
-    startDate: new Date(2025, 4, 1),
-    endDate: new Date(2025, 4, 5),
-  },
-  {
-    label: '清空选择',
-    startDate: null,
-    endDate: null,
-  },
-];
+export interface PredefinedRange {
+  label: string;
+  startDate: Date | null;
+  endDate: Date | null;
+}
 
-function AcademicCalendar() {
-  const [value, setValue] = useState<[Date | null, Date | null]>([null, null]);
-  const [date, setDate] = useState<Date>(new Date());
+interface AcademicCalendarProps {
+  predefinedRanges: PredefinedRange[];
+  initialValue?: [Date | null, Date | null];
+  initialDate?: Date;
+}
+
+function AcademicCalendar({
+  predefinedRanges,
+  initialValue = [null, null],
+  initialDate = new Date(),
+}: AcademicCalendarProps) {
+
+  const [value, setValue] = useState<[Date | null, Date | null]>(initialValue);
+  const [date, setDate] = useState<Date>(initialDate);
 
   const handlePresetClick = (startDate: Date | null, endDate: Date | null) => {
     setValue([startDate, endDate]);
@@ -27,34 +32,33 @@ function AcademicCalendar() {
 
   return (
     <ShadowContainer>
-      <Stack align="center">
-        <Group>
-          {predefinedRanges.map((preset) => (
-            <Button
-              key={preset.label}
-              onClick={() => handlePresetClick(preset.startDate, preset.endDate)}
-              variant={preset.label === '清空选择' ? 'outline' : 'filled'}
-            >
-              {preset.label}
-            </Button>
-          ))}
-        </Group>
+    <Stack align="center">
+      <Group>
+        {predefinedRanges.map((preset) => (
+          <Button
+            key={preset.label}
+            onClick={() => handlePresetClick(preset.startDate, preset.endDate)}
+            variant={preset.startDate === null && preset.endDate === null ? 'outline' : 'filled'} // Example: different style for clear button
+          >
+            {preset.label}
+          </Button>
+        ))}
+      </Group>
 
-        <DatePicker
-          date={date}
-          onDateChange={setDate}
-
-          type="range"
-          value={value}
-          allowSingleDateInRange
-
-          maxLevel="year"
-          numberOfColumns={1}
-          size="lg"
-        />
-      </Stack>
+      <DatePicker
+        date={date}
+        onDateChange={setDate}
+        type="range"
+        value={value}
+        allowSingleDateInRange
+        locale="zh-cn"
+        maxLevel="year"
+        numberOfColumns={1}
+        size="lg"
+      />
+    </Stack>
     </ShadowContainer>
   );
-};
+}
 
 export default AcademicCalendar;
