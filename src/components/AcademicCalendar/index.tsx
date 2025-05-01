@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { DatePicker } from '@mantine/dates';
-import { Button, Group, Stack } from '@mantine/core';
+import { Paper, Group, Stack, Timeline, Text, Anchor } from '@mantine/core';
 import ShadowContainer from '@site/src/components/ShadowContainer';
 import 'dayjs/locale/zh-cn';
 
@@ -30,34 +30,57 @@ function AcademicCalendar({
     setDate(startDate);
   };
 
-  return (
-    <ShadowContainer>
-    <Stack align="center">
-      <Group>
-        {predefinedRanges.map((preset) => (
-          <Button
-            key={preset.label}
-            onClick={() => handlePresetClick(preset.startDate, preset.endDate)}
-            variant={preset.startDate === null && preset.endDate === null ? 'outline' : 'filled'} // Example: different style for clear button
-          >
-            {preset.label}
-          </Button>
-        ))}
-      </Group>
+  const activeIndex = useMemo(() => {
+    const today = new Date();
+    const passedCount = predefinedRanges.filter(preset =>
+        preset.startDate &&
+        preset.startDate instanceof Date &&
+        preset.startDate.getTime() < today.getTime()
+    ).length;
+    return passedCount - 1;
+  }, [predefinedRanges])
 
-      <DatePicker
-        date={date}
-        onDateChange={setDate}
-        type="range"
-        value={value}
-        allowSingleDateInRange
-        locale="zh-cn"
-        maxLevel="year"
-        numberOfColumns={1}
-        size="lg"
-      />
-    </Stack>
-    </ShadowContainer>
+  return (
+    <>
+      <Group align="flex-start" mt="xl" gap="xl">
+        <ShadowContainer>
+        <Paper shadow="sm" radius="md" withBorder p="xs">
+          <DatePicker
+            date={date}
+            onDateChange={setDate}
+            type="range"
+            value={value}
+            allowSingleDateInRange
+            locale="zh-cn"
+            maxLevel="year"
+            numberOfColumns={1}
+            size="xl"
+          />
+          </Paper>
+        </ShadowContainer>
+        <Timeline bulletSize={22} lineWidth={4} active={activeIndex}>
+          {predefinedRanges.map((preset) => (
+            <Timeline.Item
+              //bullet={}
+              title={preset.label}
+              mt="md"
+            >
+              <Text c="dimmed" size="sm" mb={0}>
+                {`${preset.startDate.toLocaleDateString()} - ${preset.endDate.toLocaleDateString()}`}
+              </Text>
+              <Anchor
+                component="button"
+                type="button"
+                size="xs"
+                onClick={() => handlePresetClick(preset.startDate, preset.endDate)}
+              >
+                {'选择此时段'}
+              </Anchor>
+            </Timeline.Item>
+          ))}
+        </Timeline>
+      </Group>
+    </>
   );
 }
 
