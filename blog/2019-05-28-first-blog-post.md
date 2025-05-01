@@ -1,6 +1,6 @@
 ---
-slug: first-blog-post
-title: First Blog Post
+slug: WIP
+title: WIP
 authors: [slorber, yangshun]
 tags: [hola, docusaurus]
 ---
