@@ -8,6 +8,8 @@ export interface PredefinedRange {
   label: string;
   startDate: Date | null;
   endDate: Date | null;
+  icon?: React.ReactNode;
+  line?: 'solid' | 'dashed' | 'dotted';
 }
 
 interface AcademicCalendarProps {
@@ -58,12 +60,13 @@ function AcademicCalendar({
           />
           </Paper>
         </ShadowContainer>
-        <Timeline bulletSize={22} lineWidth={4} active={activeIndex}>
+        <Timeline bulletSize={24} lineWidth={2} active={activeIndex}>
           {predefinedRanges.map((preset) => (
             <Timeline.Item
-              //bullet={}
+              bullet={preset.icon ? preset.icon : undefined}
               title={preset.label}
               mt="md"
+              lineVariant={preset.line}
             >
               <Text c="dimmed" size="sm" mb={0}>
                 {`${preset.startDate.toLocaleDateString()} - ${preset.endDate.toLocaleDateString()}`}
