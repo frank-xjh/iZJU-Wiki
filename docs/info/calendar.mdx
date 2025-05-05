@@ -6,7 +6,97 @@ hide_table_of_contents: true
 ---
 
 import AcademicCalendar from '@site/src/components/AcademicCalendar';
+import {
+  IconSchool,
+  IconBackpack,
+  IconCertificate,
+  IconBuildingMonument,
+  IconSpeedboat,
+  IconOlympics,
+  IconConfetti,
+  IconClover,
+  IconWriting,
+  IconBowlChopsticks,
+  IconBeach,
+  IconStars
+} from '@tabler/icons-react';
 
 ## 2024-2025 Spring-Summer
 
-<AcademicCalendar />
+export const Schedule = [
+    {
+      label: '本科生、研究生报到注册，春季入学博士新生报到',
+      startDate: new Date(2025, 1, 16),
+      endDate: new Date(2025, 1, 16),
+      icon: <IconSchool size={14} />,
+    },
+    {
+      label: '春夏学期课程开始',
+      startDate: new Date(2025, 1, 17),
+      endDate: new Date(2025, 1, 17),
+      icon: <IconBackpack size={14} />,
+    },
+    {
+      label: '春季研究生毕业教育及离校(3月30日春季毕业典礼)',
+      startDate: new Date(2025, 2, 21),
+      endDate: new Date(2025, 2, 30),
+      icon: <IconCertificate size={14} />,
+    },
+    {
+      label: '清明节',
+      startDate: new Date(2025, 3, 4),
+      endDate: new Date(2025, 3, 6),
+      icon: <IconBuildingMonument size={14} />,
+    },
+    {
+      label: '国际劳动节',
+      startDate: new Date(2025, 4, 1),
+      endDate: new Date(2025, 4, 5),
+      icon: <IconSpeedboat size={14} />,
+    },
+    {
+      label: '春季校运动会',
+      startDate: new Date(2025, 4, 17),
+      endDate: new Date(2025, 4, 18),
+      icon: <IconOlympics size={14} />,
+    },
+    {
+      label: '校庆日',
+      startDate: new Date(2025, 4, 21),
+      endDate: new Date(2025, 4, 21),
+      icon: <IconConfetti size={14} />,
+    },
+    {
+      label: '课程结束',
+      startDate: new Date(2025, 4, 23),
+      endDate: new Date(2025, 4, 23),
+      icon: <IconClover size={14} />,
+    },
+    {
+      label: '复习与考试',
+      startDate: new Date(2025, 4, 24),
+      endDate: new Date(2025, 5, 6),
+      icon: <IconWriting size={14} />,
+    },
+    {
+      label: '端午节',
+      startDate: new Date(2025, 4, 31),
+      endDate: new Date(2025, 4, 31),
+      icon: <IconBowlChopsticks size={14} />,
+    },
+    {
+      label: '学生暑假开始（非毕业生）',
+      startDate: new Date(2025, 5, 9),
+      endDate: new Date(2025, 5, 9),
+      icon: <IconBeach size={14} />,
+      line: "dashed"
+    },
+    {
+      label: '毕业教育及离校（含夏季毕业典礼）',
+      startDate: new Date(2025, 5, 13),
+      endDate: new Date(2025, 5, 22),
+      icon: <IconStars size={14} />,
+    },
+  ];
+
+<AcademicCalendar predefinedRanges={Schedule} />

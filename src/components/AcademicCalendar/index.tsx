@@ -1,60 +1,90 @@
-import React, { useState, useEffect } from "react";
-import { DatePicker } from "@mantine/dates";
-import { Button, Group, Stack } from "@mantine/core";
-import ShadowContainer from "@site/src/components/ShadowContainer";
+import React, { useState, useMemo } from 'react';
+import { DatePicker } from '@mantine/dates';
+import { Paper, Group, Stack, Timeline, Text, Anchor } from '@mantine/core';
+import ShadowContainer from '@site/src/components/ShadowContainer';
+import 'dayjs/locale/zh-cn';
 
-const predefinedRanges = [
-  {
-    label: '五一假期 (5.1 - 5.5)',
-    startDate: new Date(2025, 4, 1),
-    endDate: new Date(2025, 4, 5),
-  },
-  {
-    label: '清空选择',
-    startDate: null,
-    endDate: null,
-  },
-];
+export interface PredefinedRange {
+  label: string;
+  startDate: Date | null;
+  endDate: Date | null;
+  icon?: React.ReactNode;
+  line?: 'solid' | 'dashed' | 'dotted';
+}
 
-function AcademicCalendar() {
-  const [value, setValue] = useState<[Date | null, Date | null]>([null, null]);
-  const [date, setDate] = useState<Date>(new Date());
+interface AcademicCalendarProps {
+  predefinedRanges: PredefinedRange[];
+  initialValue?: [Date | null, Date | null];
+  initialDate?: Date;
+}
+
+function AcademicCalendar({
+  predefinedRanges,
+  initialValue = [null, null],
+  initialDate = new Date(),
+}: AcademicCalendarProps) {
+
+  const [value, setValue] = useState<[Date | null, Date | null]>(initialValue);
+  const [date, setDate] = useState<Date>(initialDate);
 
   const handlePresetClick = (startDate: Date | null, endDate: Date | null) => {
     setValue([startDate, endDate]);
     setDate(startDate);
   };
 
+  const activeIndex = useMemo(() => {
+    const today = new Date();
+    const passedCount = predefinedRanges.filter(preset =>
+        preset.startDate &&
+        preset.startDate instanceof Date &&
+        preset.startDate.getTime() < today.getTime()
+    ).length;
+    return passedCount - 1;
+  }, [predefinedRanges])
+
   return (
-    <ShadowContainer>
-      <Stack align="center">
-        <Group>
+    <>
+      <Group align="flex-start" mt="xl" gap="xl">
+        <ShadowContainer>
+        <Paper shadow="sm" radius="md" withBorder p="xs">
+          <DatePicker
+            date={date}
+            onDateChange={setDate}
+            type="range"
+            value={value}
+            allowSingleDateInRange
+            locale="zh-cn"
+            maxLevel="year"
+            numberOfColumns={1}
+            size="xl"
+          />
+          </Paper>
+        </ShadowContainer>
+        <Timeline bulletSize={24} lineWidth={2} active={activeIndex}>
           {predefinedRanges.map((preset) => (
-            <Button
-              key={preset.label}
-              onClick={() => handlePresetClick(preset.startDate, preset.endDate)}
-              variant={preset.label === '清空选择' ? 'outline' : 'filled'}
+            <Timeline.Item
+              bullet={preset.icon ? preset.icon : undefined}
+              title={preset.label}
+              mt="md"
+              lineVariant={preset.line}
             >
-              {preset.label}
-            </Button>
+              <Text c="dimmed" size="sm" mb={0}>
+                {`${preset.startDate.toLocaleDateString()} - ${preset.endDate.toLocaleDateString()}`}
+              </Text>
+              <Anchor
+                component="button"
+                type="button"
+                size="xs"
+                onClick={() => handlePresetClick(preset.startDate, preset.endDate)}
+              >
+                {'选择此时段'}
+              </Anchor>
+            </Timeline.Item>
           ))}
-        </Group>
-
-        <DatePicker
-          date={date}
-          onDateChange={setDate}
-
-          type="range"
-          value={value}
-          allowSingleDateInRange
-
-          maxLevel="year"
-          numberOfColumns={1}
-          size="lg"
-        />
-      </Stack>
-    </ShadowContainer>
+        </Timeline>
+      </Group>
+    </>
   );
-};
+}
 
 export default AcademicCalendar;
