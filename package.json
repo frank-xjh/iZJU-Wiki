@@ -22,6 +22,7 @@
     "@mantine/dates": "^7.17.5",
     "@mantine/hooks": "^7.17.5",
     "@mdx-js/react": "^3.0.0",
+    "@tabler/icons-react": "^3.31.0",
     "clsx": "^2.0.0",
     "dayjs": "^1.11.13",
     "prism-react-renderer": "^2.3.0",
