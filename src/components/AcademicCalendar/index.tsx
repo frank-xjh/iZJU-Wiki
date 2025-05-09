@@ -6,28 +6,24 @@ import 'dayjs/locale/zh-cn';
 
 export interface PredefinedRange {
   label: string;
-  startDate: Date | null;
-  endDate: Date | null;
+  startDate: string | null;
+  endDate: string | null;
   icon?: React.ReactNode;
   line?: 'solid' | 'dashed' | 'dotted';
 }
 
 interface AcademicCalendarProps {
   predefinedRanges: PredefinedRange[];
-  initialValue?: [Date | null, Date | null];
-  initialDate?: Date;
 }
 
 function AcademicCalendar({
   predefinedRanges,
-  initialValue = [null, null],
-  initialDate = new Date(),
 }: AcademicCalendarProps) {
 
-  const [value, setValue] = useState<[Date | null, Date | null]>(initialValue);
-  const [date, setDate] = useState<Date>(initialDate);
+  const [value, setValue] = useState<[string | null, string | null]>();
+  const [date, setDate] = useState<string>();
 
-  const handlePresetClick = (startDate: Date | null, endDate: Date | null) => {
+  const handlePresetClick = (startDate: string | null, endDate: string | null) => {
     setValue([startDate, endDate]);
     setDate(startDate);
   };
@@ -36,8 +32,7 @@ function AcademicCalendar({
     const today = new Date();
     const passedCount = predefinedRanges.filter(preset =>
         preset.startDate &&
-        preset.startDate instanceof Date &&
-        preset.startDate.getTime() < today.getTime()
+        preset.startDate < today.toISOString().split("T")[0]
     ).length;
     return passedCount - 1;
   }, [predefinedRanges])
@@ -55,7 +50,6 @@ function AcademicCalendar({
             allowSingleDateInRange
             locale="zh-cn"
             maxLevel="year"
-            numberOfColumns={1}
             size="xl"
           />
           </Paper>
@@ -69,7 +63,7 @@ function AcademicCalendar({
               lineVariant={preset.line}
             >
               <Text c="dimmed" size="sm" mb={0}>
-                {`${preset.startDate.toLocaleDateString()} - ${preset.endDate.toLocaleDateString()}`}
+                {`${preset.startDate} - ${preset.endDate}`}
               </Text>
               <Anchor
                 component="button"
