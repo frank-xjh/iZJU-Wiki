@@ -1967,18 +1967,18 @@
   resolved "https://registry.npmmirror.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.5.tgz#4fc56c15c580b9adb7dc3c333a134e540b44bfb1"
   integrity sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==
 
-"@mantine/code-highlight@^7.17.5":
-  version "7.17.5"
-  resolved "https://registry.npmmirror.com/@mantine/code-highlight/-/code-highlight-7.17.5.tgz#a3ea8f371326ea0082c92bb830909702114f8af5"
-  integrity sha512-EzOLEGSbc3Psp/dfpf9yakiWEhcMPZ8qsCuSWvEVJIC40N4VPQ7Pdz1tyN2NSI9Qa31BGzHcqXZcxVtfZ0yG5A==
+"@mantine/code-highlight@^8.0.0":
+  version "8.0.0"
+  resolved "https://registry.npmmirror.com/@mantine/code-highlight/-/code-highlight-8.0.0.tgz#d971b8f1368d01071e412fad2d621777e4f04f94"
+  integrity sha512-vYMBRWRXpUwLdDbpdPiCwXJ75uXi9gIWWcgbiRiFysglFzO5VhGhnyXYtCocIdqRyQAZLfhz6Q0mYWzqJ3XgmQ==
   dependencies:
     clsx "^2.1.1"
     highlight.js "^11.10.0"
 
-"@mantine/core@^7.17.5":
-  version "7.17.5"
-  resolved "https://registry.npmmirror.com/@mantine/core/-/core-7.17.5.tgz#ae8f8deb615ed8e642cc0afa7c4a76cd642d4f90"
-  integrity sha512-66g/lr281cDPfucjtPw8gFo/yNS9G5iSKqysvPGuDpUBG2bEw8FsJMIsU0bMXtravToIpa3vJRrFUuPndPGnpQ==
+"@mantine/core@^8.0.0":
+  version "8.0.0"
+  resolved "https://registry.npmmirror.com/@mantine/core/-/core-8.0.0.tgz#8a8fa5b8e71f1db2253afe54a15c8b52c2de6240"
+  integrity sha512-TskeJS2/+DbmUe85fXDoUAyErkSvR4YlbUl8MLqhjFBJUqwc72ZrLynmN13wuKtlVPakDYYjq4/IEDMReh3CYA==
   dependencies:
     "@floating-ui/react" "^0.26.28"
     clsx "^2.1.1"
@@ -1987,17 +1987,17 @@
     react-textarea-autosize "8.5.9"
     type-fest "^4.27.0"
 
-"@mantine/dates@^7.17.5":
-  version "7.17.5"
-  resolved "https://registry.npmmirror.com/@mantine/dates/-/dates-7.17.5.tgz#bc2b9481b2156c9332d794d26cf1d3ef54c733b8"
-  integrity sha512-8/Qjjb9159rQhxtuHLukNfo3/AEGl7SVSRESN8MkfyP8MCQ7mgm9wqvMADb/9Q75boUA0HIN2pewlzlcd31MHQ==
+"@mantine/dates@^8.0.0":
+  version "8.0.0"
+  resolved "https://registry.npmmirror.com/@mantine/dates/-/dates-8.0.0.tgz#847ab6c9ca45b0396ee1bf3e128090691457290c"
+  integrity sha512-LQuDk8/tmFgZnqAGCuM+addTLHF/0lcyxYJgZbuQu1S+7WrbR58g04KzdQNg25UOBDydInRJIWAtiN/7fJFGmg==
   dependencies:
     clsx "^2.1.1"
 
-"@mantine/hooks@^7.17.5":
-  version "7.17.5"
-  resolved "https://registry.npmmirror.com/@mantine/hooks/-/hooks-7.17.5.tgz#ae3c270161c4a156e3ca8dff1c7a73c4a3710c48"
-  integrity sha512-Q/3AHI1fjl+W7xQ3jEoMmSoTxLqxMI2gPfxIjd73OPmRpPenYWR1zk/diirXXm2t7JOrAbmpA3/O1gzmgqzc/Q==
+"@mantine/hooks@^8.0.0":
+  version "8.0.0"
+  resolved "https://registry.npmmirror.com/@mantine/hooks/-/hooks-8.0.0.tgz#d105e0f1c890bbb2312e5ab452b212ae85959085"
+  integrity sha512-hrcgZMHUPsgu+VBfUVcJOqMG7Qi+AshYjFyc/qo0Cz8TEhqWmD0I1yJW+qj4sDTTDWRQC6kvI5c1h+87/9MvoA==
 
 "@mdx-js/mdx@^3.0.0":
   version "3.1.0"
@@ -8709,10 +8709,10 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@~5.6.2:
-  version "5.6.3"
-  resolved "https://registry.npmmirror.com/typescript/-/typescript-5.6.3.tgz#5f3449e31c9d94febb17de03cc081dd56d81db5b"
-  integrity sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==
+typescript@~5.8.3:
+  version "5.8.3"
+  resolved "https://registry.npmmirror.com/typescript/-/typescript-5.8.3.tgz#92f8a3e5e3cf497356f4178c34cd65a7f5e8440e"
+  integrity sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==
 
 undici-types@~6.21.0:
   version "6.21.0"
