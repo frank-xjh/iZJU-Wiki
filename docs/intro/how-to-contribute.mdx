@@ -5,3 +5,78 @@ sidebar_label: 如何参与
 slug: htc
 hide_table_of_contents: false
 ---
+
+本站处于**建设初期**，各种页面亟待撰写，欢迎各位 Contribute!
+
+:::warning
+
+请在开始编写之前，查阅 Issues，确认没有别人在做相同的工作之后，开个 **新 issue** 占坑。
+
+:::
+
+## 网站结构
+
+**iZJU-Wiki** 使用 [Docusaurus](https://docusaurus.io/) 作为静态网站生成器。
+
+```
+iZJU-Wiki
+├── docs
+│   ├── intro
+│   ├── info
+│   ├── life
+│   └── zjui
+├── src
+│   ├── css
+│   └── pages
+│   └── components
+│   └── theme
+├── static
+│   └── img
+├── docusaurus.config.ts
+├── package.json
+├── README.md
+├── sidebars.ts
+├── tsconfig.json
+└── yarn.lock
+```
+
+文档有关的内容全部存放在 `docs` 文件夹内，文档的层级目录请参照 `sidebars.ts` 内的排列。
+
+## 在 Github 上编辑
+
+
+
+## 本地部署与编辑
+
+请使用 [Node.js](https://nodejs.org/) v20 或更高版本（可以通过执行 `node -v` 命令来查看当前所用的 Node.js 版本）。本项目使用 [Yarn](https://yarnpkg.com/) 作为包管理器，关于 Yarn 的安装请参照 [安装 Yarn](https://yarnpkg.com/getting-started/install) 。
+
+### 克隆本项目
+
+首先请对项目 Fork 后再 Clone 到本地 ，便于之后提交 Pull Request 至主仓库。
+
+```bash
+git clone https://github.com/your-user-id/iZJU-Wiki
+cd iZJU-Wiki
+```
+
+使用 Yarn 安装所需依赖，初次执行可能需要花费较多时间。
+
+```bash
+yarn
+```
+
+### 运行本地服务器
+
+要在编辑文件时查看效果，可以运行一个本地服务器并进行**实时预览**。
+
+```bash
+yarn run start
+```
+
+默认情况下，浏览器将打开 `http://localhost:3000` 。此后您对项目做出的任何修改在保存后会自动更新在预览网站上。
+
+:::tip
+
+为了支持 MDX 特性，请使用 `.mdx` 作为文件后缀，而不是 `.md` 。
+
+:::
