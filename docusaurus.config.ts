@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'iZJU Wiki',
-  tagline: 'Welcome to iZJU!',
+  tagline: 'A Wiki for ZJU International Campus',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -87,7 +87,7 @@ const config: Config = {
         },
         {to: '/news', label: '新闻', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/frank-xjh/iZJU-Wiki',
           label: 'GitHub',
           position: 'right',
         },
