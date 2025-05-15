@@ -36,7 +36,15 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
     collapsed: false,
   }],
   zjui: [
-    'zjui-course'
+    {
+      type: 'category',
+      label: '课程概述',
+      link: {type: 'doc', id: 'zjui/zjui-courses'},
+      items: [
+        'zjui/courses/MATH221',
+      ],
+      collapsed: false,
+    }
   ]
 };
 
