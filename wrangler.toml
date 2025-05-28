@@ -1,0 +1,8 @@
+name = "izju-wiki"
+compatibility_date = "2025-05-28"
+
+[assets]
+directory = "./build"
+
+[observability]
+enabled = true
