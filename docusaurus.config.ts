@@ -10,7 +10,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://izju.icu',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -97,19 +97,19 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Community',
+          title: '校区官网',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: '浙江大学国际校区',
+              href: 'https://www.intl.zju.edu.cn/',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'ZJUI',
+              href: 'https://zjui.intl.zju.edu.cn/',
             },
             {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'ZJE',
+              href: 'https://zje.zju.edu.cn/',
             },
           ],
         },
