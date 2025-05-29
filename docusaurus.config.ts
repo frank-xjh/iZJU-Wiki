@@ -135,6 +135,11 @@ const config: Config = {
       additionalLanguages: ['bash'],
     },
   } satisfies Preset.ThemeConfig,
+
+  future: {
+    v4: true,
+    experimental_faster: true,
+  },
 };
 
 export default config;

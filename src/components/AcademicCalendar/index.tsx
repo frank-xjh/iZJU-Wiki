@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { DatePicker } from '@mantine/dates';
 import { Paper, Group, Stack, Timeline, Text, Anchor } from '@mantine/core';
-import ShadowContainer from '@site/src/components/ShadowContainer';
+import IsolatedContainer from '@site/src/components/IsolatedContainer';
 import 'dayjs/locale/zh-cn';
 
 export interface PredefinedRange {
@@ -39,21 +39,8 @@ function AcademicCalendar({
 
   return (
     <>
-      <Group align="flex-start" mt="xl" gap="xl">
-        <ShadowContainer>
-        <Paper shadow="sm" radius="md" withBorder p="xs">
-          <DatePicker
-            date={date}
-            onDateChange={setDate}
-            type="range"
-            value={value}
-            allowSingleDateInRange
-            locale="zh-cn"
-            maxLevel="year"
-            size="xl"
-          />
-          </Paper>
-        </ShadowContainer>
+    <IsolatedContainer>
+      <Group justify="space-between" mt="xl" mr="xl" align="flex-start">
         <Timeline bulletSize={24} lineWidth={2} active={activeIndex}>
           {predefinedRanges.map((preset) => (
             <Timeline.Item
@@ -76,7 +63,20 @@ function AcademicCalendar({
             </Timeline.Item>
           ))}
         </Timeline>
+        <Paper shadow="sm" radius="md" withBorder p="xs">
+          <DatePicker
+            date={date}
+            onDateChange={setDate}
+            type="range"
+            value={value}
+            allowSingleDateInRange
+            locale="zh-cn"
+            maxLevel="year"
+            size="xl"
+          />
+        </Paper>
       </Group>
+    </IsolatedContainer>
     </>
   );
 }

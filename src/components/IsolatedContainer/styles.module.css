@@ -1,0 +1,8 @@
+.isolated:not(#a#b) {
+  &,
+  * {
+    @layer docusaurus.infima {
+      all: revert-layer;
+    }
+  }
+}
