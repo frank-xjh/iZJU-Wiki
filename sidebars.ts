@@ -32,7 +32,7 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
   life: [{
     type: 'category',
     label: '饮食',
-    items: ['life/diet_campus'],
+    items: ['life/diet-campus'],
     collapsed: false,
   }],
   zjui: [
