@@ -18,6 +18,7 @@
     "@docusaurus/core": "3.8.0",
     "@docusaurus/faster": "^3.8.0",
     "@docusaurus/preset-classic": "3.8.0",
+    "@giscus/react": "^3.1.0",
     "@mantine/code-highlight": "^8.0.2",
     "@mantine/core": "^8.0.2",
     "@mantine/dates": "^8.0.2",
@@ -28,7 +29,8 @@
     "dayjs": "^1.11.13",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "remark-lint": "^10.0.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.8.0",
