@@ -85,7 +85,7 @@ const config: Config = {
           position: 'left',
           label: 'ZJUI',
         },
-        {to: '/news', label: '新闻', position: 'left'},
+        {to: '', label: '新闻 WIP', position: 'left'},
         {
           href: 'https://github.com/frank-xjh/iZJU-Wiki',
           label: 'GitHub',
@@ -117,8 +117,8 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              label: 'News',
-              to: '/news',
+              label: '新闻 WIP',
+              to: '',
             },
             {
               label: 'GitHub',
