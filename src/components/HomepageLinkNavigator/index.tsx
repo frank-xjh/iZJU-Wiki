@@ -42,6 +42,7 @@ const defaultCategories: Category[] = [
         links: [
           { name: '国际校区官网 & MyZJU', url: 'https://www.intl.zju.edu.cn/' },
           { name: 'ZJUI 学院', url: 'https://zjui.intl.zju.edu.cn/' },
+          { name: 'ZJE 学院', url: 'https://zje.intl.zju.edu.cn/' },
           { name: '国际校区书院', url: 'https://rc.intl.zju.edu.cn/' },
           { name: '国际校区图书馆', url: 'https://lib.intl.zju.edu.cn/' },
           { name: 'Blackboard', url: 'https://learn.intl.zju.edu.cn/' },
