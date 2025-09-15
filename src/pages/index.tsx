@@ -22,7 +22,7 @@ function HomepageHeader() {
 
         <Container p={0} size={600}>
           <Text size="lg" c="dimmed" className={classes.description}>
-            探索在浙大海宁国际校区的一切
+            一个咕咕了的 Wiki
           </Text>
         </Container>
 
