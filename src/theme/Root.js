@@ -1,6 +1,7 @@
 import React from 'react';
 import { MantineProvider } from '@mantine/core';
 import { ColorSchemeScript } from '@mantine/core';
+import { Notifications } from '@mantine/notifications';
 import theme from "@site/src/theme/MantineTheme";
 
 export default function Root({children}) {
@@ -8,7 +9,8 @@ export default function Root({children}) {
     <>
         <ColorSchemeScript />
         <MantineProvider theme={theme}>
-            {children}
+          <Notifications />
+          {children}
         </MantineProvider>
     </>
   );

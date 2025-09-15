@@ -2,6 +2,7 @@ import type {ReactNode} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import HomepageLinkNavigator from '@site/src/components/HomepageLinkNavigator';
 import { Button, Container, Text, Title } from '@mantine/core';
 import classes from './index.module.css';
 import { IconBrandGithub, IconArrowUpRight } from '@tabler/icons-react';
@@ -60,6 +61,7 @@ export default function Home(): ReactNode {
       description={siteConfig.tagline}>
       <HomepageHeader />
       <main>
+        <HomepageLinkNavigator />
       </main>
     </Layout>
   );
