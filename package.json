@@ -23,6 +23,7 @@
     "@mantine/core": "^8.0.2",
     "@mantine/dates": "^8.0.2",
     "@mantine/hooks": "^8.0.2",
+    "@mantine/notifications": "^8.3.1",
     "@mdx-js/react": "^3.0.0",
     "@tabler/icons-react": "^3.33.0",
     "clsx": "^2.0.0",

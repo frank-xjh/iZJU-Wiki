@@ -2,6 +2,7 @@ import type {ReactNode} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import HomepageLinkNavigator from '@site/src/components/HomepageLinkNavigator';
 import { Button, Container, Text, Title } from '@mantine/core';
 import classes from './index.module.css';
 import { IconBrandGithub, IconArrowUpRight } from '@tabler/icons-react';
@@ -21,7 +22,7 @@ function HomepageHeader() {
 
         <Container p={0} size={600}>
           <Text size="lg" c="dimmed" className={classes.description}>
-            探索在浙大海宁国际校区的一切
+            一个咕咕了的 Wiki
           </Text>
         </Container>
 
@@ -60,6 +61,7 @@ export default function Home(): ReactNode {
       description={siteConfig.tagline}>
       <HomepageHeader />
       <main>
+        <HomepageLinkNavigator />
       </main>
     </Layout>
   );
